@@ -1,0 +1,6 @@
+.*
+!.gitignore
+checkpoint/*
+logs/*
+target/*
+project/*
