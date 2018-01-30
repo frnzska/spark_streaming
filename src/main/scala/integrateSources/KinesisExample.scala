@@ -1,19 +1,11 @@
 // Kinesis setup steps (and more) at http://spark.apache.org/docs/latest/streaming-kinesis-integration.html
 
-package com.sundogsoftware.sparkstreaming
+package integrateSources
 
-import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.storage.StorageLevel
-
-import java.util.regex.Pattern
 import java.util.regex.Matcher
 
-import Utilities._
-
- import org.apache.spark.streaming.Duration
- import org.apache.spark.streaming.kinesis._
- import com.amazonaws.services.kinesis.clientlibrary.lib.worker.InitialPositionInStream
+import org.apache.spark.storage.StorageLevel
+import org.apache.spark.streaming.{Duration, Seconds, StreamingContext}
  
 /** Example of connecting to Amazon Kinesis Streaming and listening for log data. */
 object KinesisExample {
