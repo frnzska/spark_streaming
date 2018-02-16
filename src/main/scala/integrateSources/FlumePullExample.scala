@@ -1,17 +1,10 @@
 // Flume setup steps (and more) at http://spark.apache.org/docs/latest/streaming-flume-integration.html
 
-package com.sundogsoftware.sparkstreaming
+package integrateSources
 
-import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.storage.StorageLevel
-
-import java.util.regex.Pattern
 import java.util.regex.Matcher
 
-import Utilities._
-
-import org.apache.spark.streaming.flume._
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /** Example of connecting to Flume log data, in a "pull" configuration. */
 object FlumePullExample {
