@@ -1,16 +1,11 @@
 
-package com.sundogsoftware.sparkstreaming
+package integrateSources
 
-import org.apache.spark.SparkConf
-import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.storage.StorageLevel
-
-import java.util.regex.Pattern
 import java.util.regex.Matcher
 
-import Utilities._
-
-import com.datastax.spark.connector._
+import org.apache.spark.SparkConf
+import org.apache.spark.storage.StorageLevel
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /** Listens to Apache log data on port 9999 and saves URL, status, and user agent
  *  by IP address in a Cassandra database.
