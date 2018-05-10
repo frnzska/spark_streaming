@@ -1,20 +1,14 @@
 // Custom receiver docs at http://spark.apache.org/docs/latest/streaming-custom-receivers.html
 
-package com.sundogsoftware.sparkstreaming
+package integrateSources
 
 import java.io.{BufferedReader, InputStreamReader}
 import java.net.Socket
-import java.nio.charset.StandardCharsets
-
-import org.apache.spark.SparkConf
-import org.apache.spark.storage.StorageLevel
-import org.apache.spark.streaming.{Seconds, StreamingContext}
-import org.apache.spark.streaming.receiver.Receiver
-
-import java.util.regex.Pattern
 import java.util.regex.Matcher
 
-import Utilities._
+import org.apache.spark.storage.StorageLevel
+import org.apache.spark.streaming.receiver.Receiver
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /** Example from the Spark documentation; this implements a socket
  *  receiver from scratch using a custom Receiver.
