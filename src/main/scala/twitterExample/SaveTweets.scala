@@ -28,7 +28,6 @@ object SaveTweets {
     var totalTweets:Long = 0
 
     statuses.foreachRDD((rdd, time) => {
-      // Don't bother with empty batches
       if (rdd.count() > 0) {
         // Combine each partition's results into a single RDD:
         val repartitionedRDD = rdd.repartition(1).cache()
@@ -42,10 +41,6 @@ object SaveTweets {
         }
       }
     })
-
-    // You can also write results into a database of your choosing, but we'll do that later.
-
-    // Set a checkpoint directory, and kick it all off
     ssc.checkpoint("/tmp")
     ssc.start()
     ssc.awaitTermination()
